@@ -1,0 +1,13 @@
+[unstable]
+build-std = [
+    "alloc",
+    "compiler_builtins",
+    "core",
+]
+
+[build]
+target = ["x86_64-unknown-uefi"]
+
+[target.x86_64-unknown-uefi]
+runner = ["uefi-run", "-b", "/usr/share/ovmf/OVMF.fd", "-q", "/usr/bin/qemu-system-x86_64"]
+#build-std = {}
